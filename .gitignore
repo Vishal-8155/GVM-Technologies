@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+task/node_modules/
+task/server/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+task/.env
+task/server/.env
+
+# Build
+task/build/
+
+# Uploads (keep folder via .gitkeep)
+task/server/uploads/*
+!task/server/uploads/.gitkeep
+
+# Logs and misc
+*.log
+.DS_Store

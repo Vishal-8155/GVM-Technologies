@@ -1,0 +1,560 @@
+.App {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.App-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.auth-badge {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.auth-badge button {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.auth-form {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+
+.auth-form h2 { margin-top: 0; }
+
+.auth-form .password-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.auth-form .password-wrap input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 2.75rem 0.5rem 0.5rem;
+  margin-bottom: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.auth-form .password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  min-width: unset;
+  padding: 4px;
+  margin: 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.auth-form .password-toggle:hover {
+  color: var(--text);
+}
+
+.auth-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-form .password-wrap .password-toggle {
+  width: auto;
+  padding: 4px;
+}
+
+.auth-success {
+  color: #0a7;
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.auth-tabs button {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-tabs button.active {
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-color: var(--header-bg);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+
+.form input,
+.form textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form textarea { min-height: 80px; resize: vertical; }
+
+.form button {
+  padding: 0.5rem 1rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form .file-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form .current-img-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form .current-img-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form .current-post-img {
+  max-height: 180px;
+  width: auto;
+  align-self: flex-start;
+}
+
+.form .file-label { display: block; }
+
+.form .file-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.form .file-btn:hover {
+  background: var(--border);
+}
+
+.form .file-input {
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.form .img-preview-wrap {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.form .img-preview {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.form .file-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.toolbar { margin-bottom: 1rem; }
+
+.toolbar input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.error { color: #c00; margin-bottom: 0.5rem; }
+
+.posts-login-msg {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 2rem;
+}
+
+.posts-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+  background: var(--card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.posts-table-wrap p{
+  padding-left: 10px;
+}
+
+.posts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.posts-table th,
+.posts-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.posts-table th {
+  background: var(--header-bg);
+  color: var(--header-text);
+  font-weight: 600;
+}
+
+.posts-table tbody tr:hover {
+  background: var(--bg);
+}
+
+.posts-table .cell-content {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.posts-table .cell-image {
+  width: 56px;
+  padding: 0.35rem !important;
+  vertical-align: middle;
+}
+
+.posts-table .table-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.posts-table .cell-actions {
+  white-space: nowrap;
+}
+
+.posts-table .text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.posts-table .update-btn {
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.35rem;
+  background: #2a7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.posts-table .delete {
+  padding: 0.25rem 0.5rem;
+  background: #c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.posts-table .post-details-cell {
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.post-like-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.post-like-comments .like-btn {
+  align-self: flex-start;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.post-like-comments .like-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.post-like-comments .like-btn.liked {
+  background: #e0245e;
+  color: #fff;
+  border-color: #e0245e;
+}
+
+.comments-block {
+  margin-top: 0.25rem;
+}
+
+.comments-heading {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.comments-list {
+  margin: 0 0 0.5rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.comment-item {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.comment-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.comment-text {
+  color: var(--text);
+}
+
+.post-like-comments .comment-form {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.post-like-comments .comment-form input {
+  flex: 1;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.post-like-comments .comment-form button {
+  padding: 0.4rem 0.75rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.form-edit-msg {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-edit-msg .link-btn {
+  background: none;
+  border: none;
+  color: #07c;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: inherit;
+}
+
+.posts { display: flex; flex-direction: column; gap: 1rem; }
+
+.post {
+  background: var(--card);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+
+.post-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-srno {
+  flex-shrink: 0;
+  width: 1.75rem;
+  font-weight: bold;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.post-title { font-weight: bold; font-size: 1rem; min-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.post-content { flex: 1; color: var(--text); font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.post-meta { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+
+.post .delete {
+  flex-shrink: 0;
+  padding: 0.25rem 0.5rem;
+  background: #c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.post-img { max-width: 100%; max-height: 180px; border-radius: 6px; margin-top: 0.5rem; display: block; }
+
+.post-actions { margin-top: 0.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.like-btn { padding: 0.25rem 0.5rem; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+.like-btn.liked { background: #e0245e; color: #fff; border-color: #e0245e; }
+
+.comments { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+.comments h4 { margin: 0 0 0.5rem; font-size: 0.9rem; }
+.comment { font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--text-muted); }
+.comment strong { color: var(--text); }
+.comment-form { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+.comment-form input { flex: 1; padding: 0.4rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--text); }
+.comment-form button { padding: 0.4rem 0.75rem; background: var(--header-bg); color: var(--header-text); border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination-range { width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+.pagination button:disabled { opacity: 0.5; cursor: not-allowed; }
+.pagination button { padding: 0.5rem 1rem; cursor: pointer; background: var(--card); color: var(--text); border: 1px solid var(--border); border-radius: 4px; }
